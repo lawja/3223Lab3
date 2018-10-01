@@ -28,6 +28,7 @@ public class PayStationImpl implements PayStation {
     private int insertedSoFar;
     private int timeBought;
     private Map<Integer, Integer> change = new HashMap<>();
+    private RateStrategy strat = new ProgressiveRateStrategy();
     
     public PayStationImpl()
     {
@@ -43,17 +44,17 @@ public class PayStationImpl implements PayStation {
             case 5: 
                 change.put(5 ,change.get(5)+1 );
                 insertedSoFar += coinValue;
-                timeBought = insertedSoFar / 5 * 2;
+                timeBought = strat.calculate(insertedSoFar);
                 break;
             case 10: 
                 change.put(10 ,change.get(10)+1 );
                 insertedSoFar += coinValue;
-                timeBought = insertedSoFar / 5 * 2;
+                timeBought = strat.calculate(insertedSoFar);
                 break;
             case 25: 
                 change.put(25 ,change.get(25)+1 );
                 insertedSoFar += coinValue;
-                timeBought = insertedSoFar / 5 * 2;
+                timeBought = strat.calculate(insertedSoFar);
                 break;
             default:
                 throw new IllegalCoinException("Invalid coin: " + coinValue);

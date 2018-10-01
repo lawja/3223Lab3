@@ -82,7 +82,7 @@ public class main {
                     System.out.println("> Nickels: " + nickel_count);
                     System.out.println("> Dimes: " + dime_count);
                     System.out.println("> Quarters: " + quarter_count);
-                    System.out.println(">> Total: " + cancel_total + "\n");
+                    System.out.println(">> Total: " + cancel_total + " cents\n");
                     
                     
                     break;
