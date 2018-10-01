@@ -93,6 +93,15 @@ public class PayStationImpl implements PayStation {
         return temp;
     }
     
+    @Override
+    public void setRateStrategy(int i){
+        if(i == 0){
+            strat = new LinearRateStrategy();
+        }else if(i == 1){
+            strat = new ProgressiveRateStrategy();
+        }
+    }
+    
     private void reset() {
         timeBought = insertedSoFar = 0;
         change.put(5, 0);

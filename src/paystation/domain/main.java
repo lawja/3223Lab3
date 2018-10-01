@@ -39,7 +39,7 @@ public class main {
                         System.out.println("\nEnter 5, 10, or 25 cent coins." +
                                            " (-1 to conclude your deposit)");
                         
-                        System.out.print(">>> ");
+                        System.out.print(">>>> ");
                         
                         amount = stdIn.nextInt();
                         stdIn.nextLine();
@@ -87,7 +87,12 @@ public class main {
                     
                     break;
                 case 5:    
-                    System.out.println("Change rate");
+                    System.out.println("\nChange Rate Strategy");
+                    System.out.print("(1: Linear, 2: Progressive) >>>> ");
+                    int new_strat = stdIn.nextInt();
+                    stdIn.nextLine();
+                    paystation.setRateStrategy(new_strat);
+                    
                     break;
                 case -1:
                     break;

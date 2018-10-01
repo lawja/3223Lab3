@@ -64,5 +64,11 @@ public interface PayStation {
      * the last call and empties it, setting the total to zero.
      */
     public int empty();
+    
+    /**
+     * Sets the rate strategy for a PaystationImpl object
+     * @param i indicator used to denote which strategy we are changing to
+     */
+    public void setRateStrategy(int i);
 
 }
