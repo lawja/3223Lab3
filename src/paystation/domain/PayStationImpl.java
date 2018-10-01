@@ -28,7 +28,7 @@ public class PayStationImpl implements PayStation {
     private int insertedSoFar;
     private int timeBought;
     private Map<Integer, Integer> change = new HashMap<>();
-    private RateStrategy strat = new ProgressiveRateStrategy();
+    private RateStrategy strat = new LinearRateStrategy();
     
     public PayStationImpl()
     {
