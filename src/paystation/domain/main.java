@@ -88,10 +88,16 @@ public class main {
                     break;
                 case 5:    
                     System.out.println("\nChange Rate Strategy");
-                    System.out.print("(1: Linear, 2: Progressive) >>>> ");
+                    System.out.print("(1: Linear, 2: Progressive 3: Alternating) >>>> ");
                     int new_strat = stdIn.nextInt();
                     stdIn.nextLine();
-                    paystation.setRateStrategy(new_strat);
+                    if(new_strat == 1 || new_strat == 2 || new_strat == 3){
+                        paystation.setRateStrategy(new_strat);
+                        System.out.println("\nNew Strategy Set\n");
+                    }else{
+                        System.out.println("[!] invalid option chosen");
+                    }
+                    
                     
                     break;
                 case -1:

@@ -15,20 +15,13 @@ public class ProgressiveRateStrategy implements RateStrategy{
     public int calculate(int amountInserted) {
         int time = 0;
         
-        if(amountInserted > 150){
-            time += 30 * 2; //150/5 *2
-            if(amountInserted > 350){
-                time += (int) (200/5) * 1.5;
-                if(amountInserted > 450){
-                    time += (amountInserted - 550)/5;
-                }else{
-                    time += (int) ((amountInserted - 350)/5);
-                }
-            }else{
-                time += (int) ((amountInserted - 150)/5) * 1.5;
-            }
+        
+        if(amountInserted < 150){
+            time = (amountInserted*2)/2;
+        }else if (amountInserted < 350 && amountInserted >= 150){
+            time = ((amountInserted-150)*(3/10)) + 60;
         }else{
-            time += 2 * (amountInserted/5);
+            time = ((amountInserted-350)/5)+120;
         }
                 
         return time;

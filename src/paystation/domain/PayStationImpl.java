@@ -95,10 +95,12 @@ public class PayStationImpl implements PayStation {
     
     @Override
     public void setRateStrategy(int i){
-        if(i == 0){
+        if(i == 1){
             strat = new LinearRateStrategy();
-        }else if(i == 1){
+        }else if(i == 2){
             strat = new ProgressiveRateStrategy();
+        }else{
+            strat = new AlternatingRateStrategy();
         }
     }
     
